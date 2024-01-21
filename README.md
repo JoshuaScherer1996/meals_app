@@ -1,16 +1,16 @@
-# meals_app
+# Expense Tracker (Adaptiv)
 
-A new Flutter project.
+Expense Tracker is a Flutter app that helps you keep track of all your expenses and better understand your spending habbits! This code was produced during the completion of the Flutter course [A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37130436#overview).
 
-## Getting Started
+## Basic functionality
+- to be done
 
-This project is a starting point for a Flutter application.
+### Screenshots 
+<div align="center">
+  <img src="up_orientation_light_mode_android.png" alt="Android vertical orientation" width="200"/>
+</div>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Topics covered 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Used the GridView widget to display items in a grid.
