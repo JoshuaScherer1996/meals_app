@@ -14,3 +14,4 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 ## Topics covered 
 
 - Used the GridView widget to display items in a grid.
+- Used dummy data provided by this [github repo](https://github.com/academind/flutter-complete-guide-course-resources/blob/main/Lecture%20Attachments/08%20Navigation/dummy_data.dart).
