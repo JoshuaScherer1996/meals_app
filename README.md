@@ -17,3 +17,6 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - Used dummy data provided by this [github repo](https://github.com/academind/flutter-complete-guide-course-resources/blob/main/Lecture%20Attachments/08%20Navigation/dummy_data.dart).
 - Learned about GestureDetector to make elements tapable.
 - Used Inkwell to make elements tapable and get visual feedback for a tap.
+- Used the navigator class with push to naviagte between screens.
+- Learned about Screen Stacks.
+- Used MaterialPageRoute to create paths between screens.
