@@ -20,3 +20,11 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - Used the navigator class with push to naviagte between screens.
 - Learned about Screen Stacks.
 - Used MaterialPageRoute to create paths between screens.
+- Used the Stack widget to place widgets directly on top of each other.
+- Included the [transparemt image](https://pub.dev/packages/transparent_image) from pub.dev as a dummy image.
+- Used MemoryImage class to load images from memory.
+- Used NetwoekImage to load images from the web.
+- Used FadeInImage to have a simple fade animation when loading an image.
+- Used Positioned to controle where the next item on the stack is displayed. 
+- Used clipbehavior in my card to cut off content from child elements that would normally go out of bounds.
+- BoxFit.cover ensures that the loaded image isn't distorted.
