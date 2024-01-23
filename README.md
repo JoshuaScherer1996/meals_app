@@ -28,3 +28,5 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - Used Positioned to controle where the next item on the stack is displayed. 
 - Used clipbehavior in my card to cut off content from child elements that would normally go out of bounds.
 - BoxFit.cover ensures that the loaded image isn't distorted.
+- Used + to concatenate strings.
+- Used substring to split up strings.
