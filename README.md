@@ -30,3 +30,4 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - BoxFit.cover ensures that the loaded image isn't distorted.
 - Used + to concatenate strings.
 - Used substring to split up strings.
+- Used the BottomNavigationBar widget.
