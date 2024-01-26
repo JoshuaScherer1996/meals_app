@@ -32,3 +32,4 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - Used substring to split up strings.
 - Used the BottomNavigationBar widget.
 - Learned how to pass functions through multiple classes.
+- Used a Snackbar for user feedback.
