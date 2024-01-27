@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/tabs.dart';
-import 'package:meals_app/widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key});
@@ -20,6 +18,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
       appBar: AppBar(
         title: const Text('Your Filters'),
       ),
+      /* commented the drawer out because i don't want to have it inside the filters screen.
       drawer: MainDrawer(
         onSelectScreen: (identifier) {
           Navigator.of(context).pop();
@@ -32,6 +31,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
           }
         },
       ),
+      */
       body: Column(
         children: [
           SwitchListTile(
