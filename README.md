@@ -36,3 +36,4 @@ Expense Tracker is a Flutter app that helps you keep track of all your expenses 
 - Used the Drawer widget to create a drawer menu.
 - Used SwitchListTile widgets to create a filter functionality.
 - Instead of using push as a navigationpattern i learned about using pushReplacement to repleace screens instead of always pushing all the navigations between the screens onto the stack.
+- Used PopScope to return data after leaving a screen.
