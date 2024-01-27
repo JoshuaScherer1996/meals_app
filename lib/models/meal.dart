@@ -1,16 +1,20 @@
+// Defining an enumeration for the complexity of a meal.
 enum Complexity {
   simple,
   challenging,
   hard,
 }
 
+// Defining an enumeration for the affordability of a meal.
 enum Affordability {
   affordable,
   pricey,
   luxurious,
 }
 
+// Defining a 'Meal' class to represent various aspects of a meal.
 class Meal {
+  // Constructor for creating a new Meal instance with required parameters.
   const Meal({
     required this.id,
     required this.categories,
@@ -27,6 +31,7 @@ class Meal {
     required this.isVegetarian,
   });
 
+  // Declaration of instance variables for the Meal class.
   final String id;
   final List<String> categories;
   final String title;
