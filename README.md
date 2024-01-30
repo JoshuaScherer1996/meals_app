@@ -12,25 +12,10 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 ### Screenshots 
 <div align="center">
   <img src="categories.png" alt="Categorie screen" width="200"/>
-</div>
-
-<div align="center">
   <img src="listed_meals.png" alt="List of all the meals inside the category" width="200"/>
-</div>
-
-<div align="center">
   <img src="detail_screen.png" alt="Meal details" width="200"/>
-</div>
-
-<div align="center">
   <img src="favorited_meal.png" alt="All meals that are favorited" width="200"/>
-</div>
-
-<div align="center">
   <img src="drawer_menu.png" alt="Drawer menu" width="200"/>
-</div>
-
-<div align="center">
   <img src="filter_on.png" alt="Filters activated" width="200"/>
 </div>
 
