@@ -8,12 +8,10 @@ class MealDetailsScreen extends StatelessWidget {
   const MealDetailsScreen({
     super.key,
     required this.meal,
-    required this.onToggleFavorite,
   });
 
   // Declaring the meal and onToggleFavorite callback.
   final Meal meal;
-  final void Function(Meal meal) onToggleFavorite;
 
   // Building the UI of the MealDetailsScreen widget.
   @override

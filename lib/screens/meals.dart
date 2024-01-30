@@ -6,17 +6,16 @@ import 'package:meals_app/widgets/meal_item.dart';
 // MealsScreen class, a stateless widget for displaying a list of meals.
 class MealsScreen extends StatelessWidget {
   // Constructor for MealsScreen.
-  // It requires a list of Meal objects and a callback function for toggling the favorite status.
-  const MealsScreen(
-      {super.key,
-      this.title,
-      required this.meals,
-      required this.onToggleFavorite});
+  // It requires a list of Meal objects.
+  const MealsScreen({
+    super.key,
+    this.title,
+    required this.meals,
+  });
 
-  // Declaring the title, list of meals, and the onToggleFavorite callback.
+  // Declaring the title and list of meals.
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) onToggleFavorite;
 
   // Function to navigate to the MealDetailsScreen with a selected meal.
   void _selectMeal(BuildContext context, Meal meal) {
@@ -24,7 +23,6 @@ class MealsScreen extends StatelessWidget {
       MaterialPageRoute(
         builder: (ctx) => MealDetailsScreen(
           meal: meal,
-          onToggleFavorite: onToggleFavorite,
         ),
       ),
     );
