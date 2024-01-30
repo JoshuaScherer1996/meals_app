@@ -56,3 +56,6 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 
 - Used [Riverpod](https://riverpod.dev/) for cross widget state management.
 - Learned about Providers "providing" dynamic values and methods to change that value and consumers which use the provider in the widgets.
+- Used ConsumerStatefulWidget and ConsumerState.
+- Used the ref.watch method to reexecute the buildmethod whenever data is changed and also provide the data in the widget.
+- Used ProviderScope to wrap the enty point of the flutter app and unlock the provider functionality.

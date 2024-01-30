@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/data/dummy_data.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/screens/categories.dart';
 import 'package:meals_app/screens/filters.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
+import 'package:meals_app/providers/meals_provider.dart';
 
 // Initial filter settings - all set to false.
 const kInitialFilters = {
@@ -15,17 +16,17 @@ const kInitialFilters = {
 };
 
 // TabsScreen class, a stateful widget to handle navigation between categories and favorites.
-class TabsScreen extends StatefulWidget {
+class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
   @override
-  State<TabsScreen> createState() {
+  ConsumerState<TabsScreen> createState() {
     return _TabsScreenState();
   }
 }
 
 // Private State class for TabsScreen.
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends ConsumerState<TabsScreen> {
   // Index to keep track of the currently selected tab.
   int _selectedPageIndex = 0;
   // List to keep track of favorite meals.
@@ -86,8 +87,11 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Allows us to reexecute the build method whenever the mealsProvider changes.
+    // Also returns our data which is how we get our meals here.
+    final meals = ref.watch(mealsProvider);
     // Filtering meals based on selected filters.
-    final availableMeals = .where((meal) {
+    final availableMeals = meals.where((meal) {
       if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
         return false;
       }
