@@ -1,4 +1,4 @@
-# Meals App (Basic)
+# Meals App (Provider)
 
 Meals app is a Flutter app that helps you find the right meal for your needs! Be it for your eating habbits like vegan or vegetarian or simply the type of food you like most. We got everthing from italian to asian. Ingredients and recepies included. You can even bookmark your favorite meal to have quick and easy access to it! This code was produced during the completion of the Flutter course [A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37130436#overview).
 
@@ -51,3 +51,7 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Instead of using push as a navigationpattern i learned about using pushReplacement to repleace screens instead of always pushing all the navigations between the screens onto the stack.
 - Used PopScope to return data after leaving a screen.
 - Used the return type of push to accept data and read it.
+
+## Topics covered (Branch Basic)
+
+- 
