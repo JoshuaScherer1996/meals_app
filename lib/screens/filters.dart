@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Enumerating different types of dietary filters.
-enum Filter {
-  glutenFree,
-  lactoseFree,
-  vegetarian,
-  vegan,
-}
-
 // FiltersScreen class that represents a screen with dietary filter options.
 class FiltersScreen extends StatefulWidget {
   // Constructor for FiltersScreen.
