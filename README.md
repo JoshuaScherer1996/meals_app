@@ -61,3 +61,5 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Used ProviderScope to wrap the enty point of the flutter app and unlock the provider functionality.
 - Used StateNotifierProvider which is optimized for data that can change.
 - Learned about StateNotifier which works together with StateNotivierProvider.
+- Used ConsumerWidget to replace StatelessWidget where access to providers is needed.
+- Learned to use read instead of watch in a listener function like onPressed to not have multiple listeners at once.

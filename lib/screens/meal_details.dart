@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meals_app/providers/favorites_provider.dart';
 
 // MealDetailsScreen class, a stateless widget for displaying meal details.
-class MealDetailsScreen extends StatelessWidget {
+class MealDetailsScreen extends ConsumerWidget {
   // Constructor for MealDetailsScreen.
   // It requires a Meal object and a callback function for toggling favorite status.
   const MealDetailsScreen({
@@ -15,15 +17,23 @@ class MealDetailsScreen extends StatelessWidget {
 
   // Building the UI of the MealDetailsScreen widget.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title), // Displaying the meal's title in the AppBar.
         actions: [
           IconButton(
             onPressed: () {
-              onToggleFavorite(
-                  meal); // Toggling the favorite status when the button is pressed.
+              final wasAdded = ref
+                  .read(favoriteMelasProvider.notifier)
+                  .toggleMealFavoriteStatus(meal);
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                      wasAdded ? 'Meal added as favorite.' : 'Meal removed.'),
+                ),
+              );
             },
             icon: const Icon(Icons.star), // Star icon for the favorite button.
           )

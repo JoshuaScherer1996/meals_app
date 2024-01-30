@@ -33,16 +33,6 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   // Map to keep track of selected filters.
   Map<Filter, bool> _selectedFilters = kInitialFilters;
 
-  // Function to show a snack bar message.
-  void _showInfoMessage(String message) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-      ),
-    );
-  }
-
   // Function to handle page selection from the bottom navigation bar.
   void _selectPage(int index) {
     setState(() {
