@@ -1,17 +1,45 @@
-# Expense Tracker (Adaptiv)
+# Meals App (Basic)
 
-Expense Tracker is a Flutter app that helps you keep track of all your expenses and better understand your spending habbits! This code was produced during the completion of the Flutter course [A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37130436#overview).
+Meals app is a Flutter app that helps you find the right meal for your needs! Be it for your eating habbits like vegan or vegetarian or simply the type of food you like most. We got everthing from italian to asian. Ingredients and recepies included. You can even bookmark your favorite meal to have quick and easy access to it! This code was produced during the completion of the Flutter course [A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37130436#overview).
 
 ## Basic functionality
-- to be done
+- Drawer menu to switch between meal categories and filter options.
+- Filter the meals based on gluten free, lactose free, vegetarian and vegan.
+- Shows meals depending on their category.
+- Shows meals in detail with a picture, ingredients and the recepie.
+- Favorite meals and being able to view just your favorited meals.
 
 ### Screenshots 
 <div align="center">
-  <img src="up_orientation_light_mode_android.png" alt="Android vertical orientation" width="200"/>
+  <img src="categories.png" alt="Categorie screen" width="200"/>
 </div>
 
+<div align="center">
+  <img src="listed_screens.png" alt="List of all the meals inside the category" width="200"/>
+</div>
 
-## Topics covered 
+<div align="center">
+  <img src="details_screen.png" alt="Meal details" width="200"/>
+</div>
+
+<div align="center">
+  <img src="favorited_meal.png" alt="All meals that are favorited" width="200"/>
+</div>
+
+<div align="center">
+  <img src="drawer_menu.png" alt="Drawer menu" width="200"/>
+</div>
+
+<div align="center">
+  <img src="filter_on.png" alt="Filters activated" width="200"/>
+</div>
+
+### Example Walktrhough
+<div align="center">
+  <img src="meals_walkthrough.gif" alt="Example app walkthrough" width="200"/>
+</div>
+
+## Topics covered (Branch Basic)
 
 - Used the GridView widget to display items in a grid.
 - Used dummy data provided by this [github repo](https://github.com/academind/flutter-complete-guide-course-resources/blob/main/Lecture%20Attachments/08%20Navigation/dummy_data.dart).
