@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
 
+// MainDrawer class, a stateless widget for creating a drawer for navigation.
 class MainDrawer extends StatelessWidget {
+  // Constructor for MainDrawer.
+  // It requires a callback function to handle screen selection.
   const MainDrawer({
     super.key,
     required this.onSelectScreen,
   });
 
+  // Declaring the onSelectScreen callback.
   final void Function(String identifier) onSelectScreen;
 
+  // Building the UI of the MainDrawer widget.
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      // Column widget to arrange items vertically inside the drawer.
       child: Column(
         children: [
+          // Drawer header with a custom design.
           DrawerHeader(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
+              // Gradient decoration for the header.
               gradient: LinearGradient(
                 colors: [
                   Theme.of(context).colorScheme.primaryContainer,
@@ -28,14 +36,17 @@ class MainDrawer extends StatelessWidget {
                 end: Alignment.bottomRight,
               ),
             ),
+            // Row to arrange header content horizontally.
             child: Row(
               children: [
+                // Icon for the header.
                 Icon(
                   Icons.fastfood,
                   size: 48,
                   color: Theme.of(context).colorScheme.primary,
                 ),
                 const SizedBox(width: 18),
+                // Header title.
                 Text(
                   'Cooking up!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -45,6 +56,7 @@ class MainDrawer extends StatelessWidget {
               ],
             ),
           ),
+          // ListTile for navigation to the 'Meals' screen.
           ListTile(
             leading: Icon(
               Icons.restaurant,
@@ -59,9 +71,10 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              onSelectScreen('meals');
+              onSelectScreen('meals'); // Executing the callback on tap.
             },
           ),
+          // ListTile for navigation to the 'Filters' screen.
           ListTile(
             leading: Icon(
               Icons.settings,
@@ -76,7 +89,7 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              onSelectScreen('filters');
+              onSelectScreen('filters'); // Executing the callback on tap.
             },
           )
         ],
