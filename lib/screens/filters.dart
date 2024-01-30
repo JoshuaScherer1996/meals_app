@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Enumerating different types of dietary filters.
 enum Filter {
   glutenFree,
   lactoseFree,
@@ -7,36 +8,44 @@ enum Filter {
   vegan,
 }
 
-//
+// FiltersScreen class that represents a screen with dietary filter options.
 class FiltersScreen extends StatefulWidget {
+  // Constructor for FiltersScreen.
   const FiltersScreen({
     super.key,
     required this.currentFilters,
   });
 
+  // Current filter settings passed from outside the widget.
   final Map<Filter, bool> currentFilters;
 
+  // Creating the state for this StatefulWidget.
   @override
   State<FiltersScreen> createState() {
     return _FiltersScreenState();
   }
 }
 
+// Private State class for FiltersScreen.
 class _FiltersScreenState extends State<FiltersScreen> {
+  // Internal state to track each filter's on/off status.
   var _glutenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
   var _vegetarianFilterSet = false;
   var _veganFilterSet = false;
 
+  // initState is called once when the widget is created.
   @override
   void initState() {
     super.initState();
+    // Initializing filter settings based on the currentFilters provided.
     _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
     _lactoseFreeFilterSet = widget.currentFilters[Filter.lactoseFree]!;
     _vegetarianFilterSet = widget.currentFilters[Filter.vegetarian]!;
     _veganFilterSet = widget.currentFilters[Filter.vegan]!;
   }
 
+  // Building the UI of the FiltersScreen.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +70,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         canPop: false,
         onPopInvoked: (bool didPop) {
           if (didPop) return;
+          // Returning the updated filter settings when the screen is popped.
           Navigator.of(context).pop({
             Filter.glutenFree: _glutenFreeFilterSet,
             Filter.lactoseFree: _lactoseFreeFilterSet,
@@ -69,10 +79,13 @@ class _FiltersScreenState extends State<FiltersScreen> {
           });
         },
         child: Column(
+          // List of SwitchListTiles to enable/disable filters.
           children: [
+            // Each SwitchListTile corresponds to a dietary filter.
             SwitchListTile(
               value: _glutenFreeFilterSet,
               onChanged: (isChecked) {
+                // Updating the state when the switch is toggled.
                 setState(() {
                   _glutenFreeFilterSet = isChecked;
                 });
