@@ -55,3 +55,4 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 ## Topics covered (Branch Basic)
 
 - Used [Riverpod](https://riverpod.dev/) for cross widget state management.
+- Learned about Providers "providing" dynamic values and methods to change that value and consumers which use the provider in the widgets.
