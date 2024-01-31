@@ -16,6 +16,7 @@ const kInitialFilters = {
 };
 
 //Todo: Need to fix this code and the bugs.
+//Test als Beispiel für Git
 
 // TabsScreen class, a stateful widget to handle navigation between categories and favorites.
 class TabsScreen extends ConsumerStatefulWidget {
