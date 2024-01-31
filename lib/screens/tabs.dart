@@ -15,6 +15,8 @@ const kInitialFilters = {
   Filter.vegan: false,
 };
 
+//Todo: Need to fix this code and the bugs.
+
 // TabsScreen class, a stateful widget to handle navigation between categories and favorites.
 class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
