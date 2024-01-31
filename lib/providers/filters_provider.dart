@@ -18,3 +18,4 @@ class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
 }
 
 final filtersProvider = StateNotifierProvider((ref) => null);
+// Bunch of todos still open
