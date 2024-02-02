@@ -3,35 +3,40 @@ import 'package:meals_app/models/meal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/providers/favorites_provider.dart';
 
-// MealDetailsScreen class, a stateless widget for displaying meal details.
+// MealDetailsScreen is a ConsumerWidget that uses Riverpod for state management.
+// It displays detailed information about a meal and allows users to mark a meal as a favorite.
 class MealDetailsScreen extends ConsumerWidget {
-  // Constructor for MealDetailsScreen.
-  // It requires a Meal object and a callback function for toggling favorite status.
+  // Constructor requires a Meal object to display details for.
   const MealDetailsScreen({
     super.key,
-    required this.meal,
+    required this.meal, // Meal object containing details to be displayed.
   });
 
-  // Declaring the meal and onToggleFavorite callback.
+  // Final property to hold the Meal object passed to the widget.
   final Meal meal;
 
-  // Building the UI of the MealDetailsScreen widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Watching the favoriteMealsProvider to get the current list of favorite meals.
     final favoriteMeals = ref.watch(favoriteMelasProvider);
 
+    // Checking if the current meal is in the list of favorite meals.
     final isFavorite = favoriteMeals.contains(meal);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title), // Displaying the meal's title in the AppBar.
+        title: Text(meal.title), // Displaying the meal's title on the AppBar.
         actions: [
+          // IconButton to toggle the favorite status of the meal.
           IconButton(
             onPressed: () {
+              // Calling toggleMealFavoriteStatus on favoriteMealsProvider to update the meal's favorite status.
               final wasAdded = ref
                   .read(favoriteMelasProvider.notifier)
                   .toggleMealFavoriteStatus(meal);
+              // Clearing any existing snack bars to prevent stacking.
               ScaffoldMessenger.of(context).clearSnackBars();
+              // Displaying a SnackBar to inform the user of the updated favorite status.
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
@@ -41,24 +46,24 @@ class MealDetailsScreen extends ConsumerWidget {
             },
             icon: Icon(isFavorite
                 ? Icons.star
-                : Icons.star_border), // Star icon for the favorite button.
+                : Icons
+                    .star_border), // Changing the icon based on the favorite status.
           )
         ],
       ),
-      // Using SingleChildScrollView to allow the body to be scrollable.
       body: SingleChildScrollView(
+        // Using SingleChildScrollView to prevent overflow and allow for scrolling.
         child: Column(
           children: [
-            // Displaying the meal's image.
             Image.network(
-              meal.imageUrl,
+              meal.imageUrl, // Displaying the meal's image.
               height: 300,
               width: double.infinity,
               fit: BoxFit
-                  .cover, // Covering the width of the screen while maintaining aspect ratio.
+                  .cover, // Ensuring the image covers the allotted space while maintaining aspect ratio.
             ),
             const SizedBox(height: 14),
-            // Title for the ingredients section.
+            // Section title for ingredients.
             Text(
               'Ingredients',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -67,7 +72,7 @@ class MealDetailsScreen extends ConsumerWidget {
                   ),
             ),
             const SizedBox(height: 14),
-            // Displaying each ingredient of the meal.
+            // Listing all ingredients of the meal.
             for (final ingredient in meal.ingredients)
               Text(
                 ingredient,
@@ -76,7 +81,7 @@ class MealDetailsScreen extends ConsumerWidget {
                     ),
               ),
             const SizedBox(height: 24),
-            // Title for the steps section.
+            // Section title for cooking steps.
             Text(
               'Steps',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -85,7 +90,7 @@ class MealDetailsScreen extends ConsumerWidget {
                   ),
             ),
             const SizedBox(height: 14),
-            // Displaying each step in the meal's preparation process.
+            // Displaying each cooking step with padding for readability.
             for (final step in meal.steps)
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -100,7 +105,7 @@ class MealDetailsScreen extends ConsumerWidget {
                       ),
                 ),
               ),
-            const SizedBox(height: 16)
+            const SizedBox(height: 16) // Additional spacing at the end.
           ],
         ),
       ),
