@@ -16,6 +16,7 @@ final theme = ThemeData(
 // Main entry point of the Flutter application.
 void main() {
   runApp(
+    // Wrapping the root App widget with ProviderScope for Riverpod state management.
     const ProviderScope(
       child: App(),
     ),
@@ -30,7 +31,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home: const TabsScreen(),
+      home:
+          const TabsScreen(), // Setting the home screen to TabsScreen, which controls the main navigation.
       debugShowCheckedModeBanner: false,
     );
   }
