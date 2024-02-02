@@ -18,6 +18,10 @@ class MealDetailsScreen extends ConsumerWidget {
   // Building the UI of the MealDetailsScreen widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final favoriteMeals = ref.watch(favoriteMelasProvider);
+
+    final isFavorite = favoriteMeals.contains(meal);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title), // Displaying the meal's title in the AppBar.
@@ -35,7 +39,9 @@ class MealDetailsScreen extends ConsumerWidget {
                 ),
               );
             },
-            icon: const Icon(Icons.star), // Star icon for the favorite button.
+            icon: Icon(isFavorite
+                ? Icons.star
+                : Icons.star_border), // Star icon for the favorite button.
           )
         ],
       ),
