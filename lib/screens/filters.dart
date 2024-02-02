@@ -5,13 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // FiltersScreen class that represents a screen with dietary filter options.
 class FiltersScreen extends ConsumerStatefulWidget {
   // Constructor for FiltersScreen.
-  const FiltersScreen({
-    super.key,
-    required this.currentFilters,
-  });
-
-  // Current filter settings passed from outside the widget.
-  final Map<Filter, bool> currentFilters;
+  const FiltersScreen({super.key});
 
   // Creating the state for this StatefulWidget.
   @override
@@ -32,11 +26,11 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
   @override
   void initState() {
     super.initState();
-    // Initializing filter settings based on the currentFilters provided.
-    _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
-    _lactoseFreeFilterSet = widget.currentFilters[Filter.lactoseFree]!;
-    _vegetarianFilterSet = widget.currentFilters[Filter.vegetarian]!;
-    _veganFilterSet = widget.currentFilters[Filter.vegan]!;
+    final activeFilters = ref.read(filtersProvider);
+    _glutenFreeFilterSet = activeFilters[Filter.glutenFree]!;
+    _lactoseFreeFilterSet = activeFilters[Filter.lactoseFree]!;
+    _vegetarianFilterSet = activeFilters[Filter.vegetarian]!;
+    _veganFilterSet = activeFilters[Filter.vegan]!;
   }
 
   // Building the UI of the FiltersScreen.
@@ -46,31 +40,17 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
       appBar: AppBar(
         title: const Text('Your Filters'),
       ),
-      /* commented the drawer out because i don't want to have it inside the filters screen.
-      drawer: MainDrawer(
-        onSelectScreen: (identifier) {
-          Navigator.of(context).pop();
-          if (identifier == 'meals') {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (ctx) => const TabsScreen(),
-              ),
-            );
-          }
-        },
-      ),
-      */
       body: PopScope(
         canPop: false,
         onPopInvoked: (bool didPop) {
           if (didPop) return;
-          // Returning the updated filter settings when the screen is popped.
-          Navigator.of(context).pop({
+          ref.read(filtersProvider.notifier).setFilters({
             Filter.glutenFree: _glutenFreeFilterSet,
             Filter.lactoseFree: _lactoseFreeFilterSet,
             Filter.vegetarian: _vegetarianFilterSet,
             Filter.vegan: _veganFilterSet,
           });
+          Navigator.of(context).pop();
         },
         child: Column(
           // List of SwitchListTiles to enable/disable filters.
