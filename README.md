@@ -19,11 +19,6 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
   <img src="filter_on.png" alt="Filters activated" width="200"/>
 </div>
 
-### Example Walktrhough
-<div align="center">
-  <img src="meals_walkthrough.gif" alt="Example app walkthrough" width="200"/>
-</div>
-
 ## Topics covered (Branch Basic)
 
 - Used the GridView widget to display items in a grid.
