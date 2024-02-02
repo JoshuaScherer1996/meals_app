@@ -63,3 +63,4 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Learned about StateNotifier which works together with StateNotivierProvider.
 - Used ConsumerWidget to replace StatelessWidget where access to providers is needed.
 - Learned to use read instead of watch in a listener function like onPressed to not have multiple listeners at once.
+- Learned how to outsource state into providers.
