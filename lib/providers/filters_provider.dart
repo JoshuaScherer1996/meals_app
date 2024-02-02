@@ -15,7 +15,16 @@ class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
           Filter.vegetarian: false,
           Filter.vegan: false
         });
+  void setFilter(Filter filter, bool isActive) {
+    state = {
+      ...state,
+      filter: isActive,
+    };
+  }
 }
 
-final filtersProvider = StateNotifierProvider((ref) => null);
+final filtersProvider =
+    StateNotifierProvider<FiltersNotifier, Map<Filter, bool>>(
+  (ref) => FiltersNotifier(),
+);
 // Bunch of todos still open

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meals_app/providers/filters_provider.dart';
 import 'package:meals_app/screens/categories.dart';
 import 'package:meals_app/screens/filters.dart';
 import 'package:meals_app/screens/meals.dart';
@@ -14,9 +15,6 @@ const kInitialFilters = {
   Filter.vegetarian: false,
   Filter.vegan: false,
 };
-
-//Todo: Need to fix this code and the bugs.
-//Test als Beispiel für Git
 
 // TabsScreen class, a stateful widget to handle navigation between categories and favorites.
 class TabsScreen extends ConsumerStatefulWidget {

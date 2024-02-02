@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/providers/filters_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // FiltersScreen class that represents a screen with dietary filter options.
-class FiltersScreen extends StatefulWidget {
+class FiltersScreen extends ConsumerStatefulWidget {
   // Constructor for FiltersScreen.
   const FiltersScreen({
     super.key,
@@ -13,13 +15,13 @@ class FiltersScreen extends StatefulWidget {
 
   // Creating the state for this StatefulWidget.
   @override
-  State<FiltersScreen> createState() {
+  ConsumerState<FiltersScreen> createState() {
     return _FiltersScreenState();
   }
 }
 
 // Private State class for FiltersScreen.
-class _FiltersScreenState extends State<FiltersScreen> {
+class _FiltersScreenState extends ConsumerState<FiltersScreen> {
   // Internal state to track each filter's on/off status.
   var _glutenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
