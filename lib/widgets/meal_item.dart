@@ -43,17 +43,20 @@ class MealItem extends StatelessWidget {
         onTap: () {
           onSelectMeal(meal); // Triggering the provided callback on tap.
         },
-        // Stacking widgets for layout.
+        // Stack widget allows for overlaying of multiple widgets on top of each other.
         child: Stack(
           children: [
+            // Hero widget creates a smooth animation between two screens for a shared element.
+            // In this case, the shared element is the image of a meal.
             Hero(
-              tag: meal.id,
-              // Fade in image for the meal.
+              tag: meal
+                  .id, // Unique tag to identify the Hero animation source and destination.
+              // FadeInImage widget is used to smoothly display images as they load.
+              // It shows a placeholder image until the target image is loaded.
               child: FadeInImage(
-                placeholder: MemoryImage(
-                    kTransparentImage), // Transparent image as a placeholder.
-                image: NetworkImage(meal.imageUrl), // Image of the meal.
-                fit: BoxFit.cover, // Covering the area without stretching.
+                placeholder: MemoryImage(kTransparentImage),
+                image: NetworkImage(meal.imageUrl),
+                fit: BoxFit.cover,
                 height: 200,
                 width: double.infinity,
               ),
