@@ -47,13 +47,16 @@ class MealItem extends StatelessWidget {
         child: Stack(
           children: [
             // Fade in image for the meal.
-            FadeInImage(
-              placeholder: MemoryImage(
-                  kTransparentImage), // Transparent image as a placeholder.
-              image: NetworkImage(meal.imageUrl), // Image of the meal.
-              fit: BoxFit.cover, // Covering the area without stretching.
-              height: 200,
-              width: double.infinity,
+            Hero(
+              tag: meal.id,
+              child: FadeInImage(
+                placeholder: MemoryImage(
+                    kTransparentImage), // Transparent image as a placeholder.
+                image: NetworkImage(meal.imageUrl), // Image of the meal.
+                fit: BoxFit.cover, // Covering the area without stretching.
+                height: 200,
+                width: double.infinity,
+              ),
             ),
             // Positioned widget to align the text container at the bottom.
             Positioned(

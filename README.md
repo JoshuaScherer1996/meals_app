@@ -71,3 +71,4 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Learned about the animationbuilder and it's values to enhance animation performance.
 - Learned abiut different animation classes like the SlideTransition class.
 - Used a Tween in combination with implizit animations as well.
+- Used the Hero widget to animate widets across different widgets / screens.

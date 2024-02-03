@@ -67,12 +67,15 @@ class MealDetailsScreen extends ConsumerWidget {
         // Using SingleChildScrollView to prevent overflow and allow for scrolling.
         child: Column(
           children: [
-            Image.network(
-              meal.imageUrl, // Displaying the meal's image.
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit
-                  .cover, // Ensuring the image covers the allotted space while maintaining aspect ratio.
+            Hero(
+              tag: meal.id,
+              child: Image.network(
+                meal.imageUrl, // Displaying the meal's image.
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit
+                    .cover, // Ensuring the image covers the allotted space while maintaining aspect ratio.
+              ),
             ),
             const SizedBox(height: 14),
             // Section title for ingredients.
