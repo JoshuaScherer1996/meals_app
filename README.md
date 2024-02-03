@@ -47,7 +47,7 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Used PopScope to return data after leaving a screen.
 - Used the return type of push to accept data and read it.
 
-## Topics covered (Branch Animation)
+## Topics covered (Branch Riverpod)
 
 - Used [Riverpod](https://riverpod.dev/) for cross widget state management.
 - Learned about Providers "providing" dynamic values and methods to change that value and consumers which use the provider in the widgets.
@@ -61,7 +61,7 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Learned how to outsource state into providers.
 - Used a provider which is dependent on other providers.
 
-## Topics covered (Branch Basic)
+## Topics covered (Branch Animation)
 
 - Used explizit animations to define my own animations.
 - Used implizit animations defined by flutter.
