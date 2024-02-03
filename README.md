@@ -69,3 +69,4 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 - Used the AnimationController class in combination with explizit animations.
 - Used the dispose method for cleanup work.
 - Learned about the animationbuilder and it's values to enhance animation performance.
+- Learned abiut different animation classes like the SlideTransition class.
