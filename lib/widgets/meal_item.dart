@@ -46,9 +46,9 @@ class MealItem extends StatelessWidget {
         // Stacking widgets for layout.
         child: Stack(
           children: [
-            // Fade in image for the meal.
             Hero(
               tag: meal.id,
+              // Fade in image for the meal.
               child: FadeInImage(
                 placeholder: MemoryImage(
                     kTransparentImage), // Transparent image as a placeholder.

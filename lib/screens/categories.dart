@@ -5,39 +5,46 @@ import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/widgets/category_grid_item.dart';
 
-// CategoriesScreen class that represents a screen displaying a grid of category items.
+// Defines a StatefulWidget for displaying categories.
 class CategoriesScreen extends StatefulWidget {
-  // Constructor for CategoriesScreen.
+  // Constructor requiring a list of meals that are available.
   const CategoriesScreen({
     super.key,
-    required this.availableMeals,
+    required this.availableMeals, // List of meals to display in categories.
   });
 
-  // Field of CategoriesScreen.
+  // Declaration of a final List of Meal objects.
   final List<Meal> availableMeals;
 
+  // Creates the mutable state for this widget.
   @override
   State<CategoriesScreen> createState() => _CategoriesScreenState();
 }
 
+// Private State class for CategoriesScreen, handling animations and UI logic.
 class _CategoriesScreenState extends State<CategoriesScreen>
     with SingleTickerProviderStateMixin {
+  // Late initialization of an AnimationController.
   late AnimationController _animationController;
 
+  // Initializes the state, setting up the animation controller.
   @override
   void initState() {
     super.initState();
 
+    // Initializing the animation controller with a specified duration and bounds.
     _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 300),
-      lowerBound: 0,
-      upperBound: 1,
+      vsync: this, // Current class instance as the vsync provider.
+      duration: const Duration(milliseconds: 300), // Animation duration.
+      lowerBound: 0, // Starting point of the animation value.
+      upperBound: 1, // Ending point of the animation value.
     );
 
+    // Starts the animation towards the upper bound.
     _animationController.forward();
   }
 
+  // Disposes the animation controller to free up resources when the widget is removed from the widget tree.
   @override
   void dispose() {
     _animationController.dispose();
@@ -52,7 +59,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
         .toList();
 
     // Navigating to the MealsScreen with the selected category's meals.
-    // Alternative: Navigator.of(context).push(route)
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -68,10 +74,9 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: _animationController,
+      animation: _animationController, // Links the builder to the controller.
       child: GridView(
         padding: const EdgeInsets.all(24),
-        // Defining the layout structure of the grid.
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,
@@ -80,7 +85,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
         ),
         children: [
           // Creating a list of CategoryGridItem widgets for each available category.
-          // Alternative: availableCategories.map((category) => CategoryGridItem(category: category)).toList();
           for (final category in availableCategories)
             CategoryGridItem(
               category: category,
@@ -92,15 +96,15 @@ class _CategoriesScreenState extends State<CategoriesScreen>
       ),
       builder: (context, child) => SlideTransition(
         position: Tween(
-          begin: const Offset(0, 0.3),
-          end: const Offset(0, 0),
+          begin: const Offset(0, 0.3), // Starting offset for the animation.
+          end: const Offset(0, 0), // Ending offset for the animation.
         ).animate(
           CurvedAnimation(
             parent: _animationController,
-            curve: Curves.easeInOut,
+            curve: Curves.easeInOut, // Animation curve.
           ),
         ),
-        child: child,
+        child: child, // The child widget to animate.
       ),
     );
   }
