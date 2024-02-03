@@ -63,4 +63,9 @@ Meals app is a Flutter app that helps you find the right meal for your needs! Be
 
 ## Topics covered (Branch Basic)
 
-- First point to be done
+- Used explizit animations to define my own animations.
+- Used implizit animations defined by flutter.
+- Learned about mix in classes.
+- Used the AnimationController class in combination with explizit animations.
+- Used the dispose method for cleanup work.
+- Learned about the animationbuilder and it's values to enhance animation performance.
