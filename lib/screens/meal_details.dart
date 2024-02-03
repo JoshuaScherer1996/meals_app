@@ -44,11 +44,17 @@ class MealDetailsScreen extends ConsumerWidget {
                 ),
               );
             },
-            icon: Icon(isFavorite
-                ? Icons.star
-                : Icons
-                    .star_border), // Changing the icon based on the favorite status.
-          )
+            icon: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              transitionBuilder: (child, animation) {
+                return RotationTransition(
+                  turns: animation,
+                  child: child,
+                );
+              },
+              child: Icon(isFavorite ? Icons.star : Icons.star_border),
+            ),
+          ),
         ],
       ),
       body: SingleChildScrollView(
